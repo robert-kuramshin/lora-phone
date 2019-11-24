@@ -13,6 +13,12 @@ void screenWrite(char * mes);
 
 void screenWriteChar(char mes);
 
+void splashScreen();
+
+void userNameScreen();
+
+void resetWriteArea();
+
 //------------------------------------------
 
 void loraSetup();
