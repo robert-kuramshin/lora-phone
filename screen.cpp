@@ -25,15 +25,14 @@ void backlighting(bool state) {
 
 void resetScreen() {
   tft.fillScreen(ILI9341_BLACK);
-  tft.setCursor(tft.width()-15,tft.height()-24);
-  tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(3);
+  tft.setCursor(0,tft.height()-8);
+  tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(1);
 }
 
 void resetWriteArea() {
-  tft.fillScreen(ILI9341_BLACK);
-  tft.fillRect(tft.width()-15,tft.height()-24, 15, 24, ILI9341_BLACK);
-  tft.setCursor(tft.width()-15,tft.height()-24);
-  tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(3);
+  tft.fillRect(0,tft.height()-8, tft.width(), 8, ILI9341_BLACK);
+  tft.setCursor(0,tft.height()-8);
+  tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(1);
 
 }
 
@@ -64,17 +63,17 @@ void screenWriteChar(char mes)
 
 void splashScreen()
 {
-    tft.setCursor(tft.width()/2,tft.height()/2);
-    tft.setTextColor(ILI9341_RED);    tft.setTextSize(1);
-    tft.print("LORA-PHONE");
-    tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(3);
+    tft.setCursor(0,tft.height()/2);
+    tft.setTextColor(ILI9341_RED);    tft.setTextSize(3);
+    tft.print("LORA-PHONE\n");
+    tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(1);
     tft.print("by: Robert Kuramshin");
 }
 
 void userNameScreen()
 {
     tft.setCursor(0,0);
-    tft.setTextColor(ILI9341_RED);    tft.setTextSize(3);
+    tft.setTextColor(ILI9341_RED);    tft.setTextSize(2);
     tft.print("Enter a username: ");
-    tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(3);
+    tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(2);
 }

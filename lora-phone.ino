@@ -45,6 +45,7 @@ void setup()
   }
 
   resetScreen();
+  clearWritingArea();
 }
 
 void loop()
@@ -66,8 +67,8 @@ void loop()
     else if (res == '\b')
     {
       clearWritingArea();
-      screenWrite(message);
       message[--count] = '\0';
+      screenWrite(message);
     }
     else
     {
@@ -89,7 +90,7 @@ void clearWritingArea()
 void checkIncoming()
 {
   char* message = loraRead();
-  int y = (currentLine++)*15;
+  int y = (currentLine++)*8;
   screenWriteAt(message,0,y);
   free(message);
 }
