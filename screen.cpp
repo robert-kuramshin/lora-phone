@@ -1,6 +1,8 @@
 #include "Adafruit_GFX.h"
 #include "Adafruit_ILI9341.h"
 
+#include "SPI.h"
+
 // For the ESP-WROVER_KIT, these are the default.
 #define TFT_CS   4
 #define TFT_DC   15
