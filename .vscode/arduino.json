@@ -1,0 +1,5 @@
+{
+    "board": "Heltec-esp32:esp32:wireless_stick_lite",
+    "configuration": "PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none",
+    "sketch": "lora-phone.ino"
+}

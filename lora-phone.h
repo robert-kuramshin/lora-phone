@@ -1,0 +1,3 @@
+char keyboardSetup();
+
+char scanKeyboard();
