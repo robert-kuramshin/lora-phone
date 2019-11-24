@@ -3,6 +3,7 @@
 #include "lora-phone.h"
 
 char *username;
+int currentLine = 0;
 
 void setup()
 {
@@ -83,4 +84,12 @@ void clearWritingArea()
   resetWriteArea();
   screenWrite(username);
   screenWrite(": ");
+}
+
+void checkIncoming()
+{
+  char* message = loraRead();
+  int y = (currentLine++)*15;
+  screenWriteAt(message,0,y);
+  free(message);
 }

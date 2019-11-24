@@ -51,6 +51,12 @@ void screenWrite(char * mes)
     tft.print(mes);
 }
 
+void screenWriteAt(char * mes,int x,int y)
+{
+    tft.setCursor(x,y);
+    tft.print(mes);
+}
+
 void screenWriteChar(char mes)
 {
     tft.print(mes);

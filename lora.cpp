@@ -14,3 +14,17 @@ void loraSend(char* messsage)
     LoRa.print(messsage);
     LoRa.endPacket();
 }
+
+char * loraRead()
+{
+int packetSize = LoRa.parsePacket();
+char *message = NULL;
+int count = 0;
+  if (packetSize) {
+    message = (char *)calloc(packetSize,sizeof(char));
+    while (LoRa.available()) {
+      message[count++] = (char)LoRa.read();
+    }
+  }
+  return message;
+}
