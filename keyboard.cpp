@@ -108,9 +108,9 @@ char scanKeyboard()
     if ((res) & (1 << COL_2))
         return 'D';
     if ((res) & (1 << COL_3))
-        return 'Y';
+        return 'T';
     if ((res) & (1 << COL_4))
-        return 'U';
+        return 'Y';
     if ((res) & (1 << COL_5))
         return 'I';
 
