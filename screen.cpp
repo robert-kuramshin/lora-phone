@@ -1,6 +1,8 @@
 #include "Adafruit_GFX.h"
 #include "Adafruit_ILI9341.h"
 
+#include "lora-phone.h"
+
 #include "SPI.h"
 
 // For the ESP-WROVER_KIT, these are the default.

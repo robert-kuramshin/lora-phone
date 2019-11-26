@@ -1,10 +1,20 @@
 
+#ifndef LORA_PHONE_H_
+#define LORA_PHONE_H_
+
 #define FONT_SIZE   2
 
 #define TEXT_HEIGHT (8*FONT_SIZE)
 #define TEXT_WIDTH  (5*FONT_SIZE)
 
 #define USERNAME_LENGTH 8
+
+typedef struct lora_message
+{
+    char * user;
+    char * body;
+    uint8_t length;
+} message_t;
 
 //------------------------------------------
 
@@ -33,6 +43,8 @@ void screenWriteAt(char * mes,int x,int y);
 
 void loraSetup();
 
-void loraSend(char* messsage);
+void loraSend(message_t messsage);
 
-char * loraRead();
+message_t loraRead();
+
+#endif

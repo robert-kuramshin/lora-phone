@@ -60,7 +60,11 @@ void loop()
     if (res == '\n')
     {
       message[count++] = '\0';
-      loraSend(message);
+      message_t res;
+      res.user = username;
+      res.body = message;
+      res.length = strlen(message);
+      loraSend(res);
       clearWritingArea();
       return;
     }
@@ -89,8 +93,11 @@ void clearWritingArea()
 
 void checkIncoming()
 {
-  char* message = loraRead();
+  message_t message = loraRead();
   int y = (currentLine++)*TEXT_HEIGHT;
-  screenWriteAt(message,0,y);
-  free(message);
+  screenWriteAt(message.user,0,y);
+  screenWriteAt(":",USERNAME_LENGTH,y);
+  screenWriteAt(message.body,USERNAME_LENGTH+1,y);
+  free(message.user);
+  free(message.body);
 }
