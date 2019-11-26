@@ -25,13 +25,13 @@ void backlighting(bool state) {
 
 void resetScreen() {
   tft.fillScreen(ILI9341_BLACK);
-  tft.setCursor(0,tft.height()-8);
+  tft.setCursor(0,tft.height()-TEXT_HEIGHT);
   tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(1);
 }
 
 void resetWriteArea() {
-  tft.fillRect(0,tft.height()-8, tft.width(), 8, ILI9341_BLACK);
-  tft.setCursor(0,tft.height()-8);
+  tft.fillRect(0,tft.height()-TEXT_HEIGHT, tft.width(), TEXT_HEIGHT, ILI9341_BLACK);
+  tft.setCursor(0,tft.height()-TEXT_HEIGHT);
   tft.setTextColor(ILI9341_WHITE);    tft.setTextSize(1);
 
 }

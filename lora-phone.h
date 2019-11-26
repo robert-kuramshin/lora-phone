@@ -1,3 +1,11 @@
+
+#define FONT_SIZE   2
+
+#define TEXT_HEIGHT (8*FONT_SIZE)
+#define TEXT_WIDTH  (5*FONT_SIZE)
+
+#define USERNAME_LENGTH 8
+
 //------------------------------------------
 
 char keyboardSetup();

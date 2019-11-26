@@ -90,7 +90,7 @@ void clearWritingArea()
 void checkIncoming()
 {
   char* message = loraRead();
-  int y = (currentLine++)*8;
+  int y = (currentLine++)*TEXT_HEIGHT;
   screenWriteAt(message,0,y);
   free(message);
 }
