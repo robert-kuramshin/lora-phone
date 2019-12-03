@@ -130,7 +130,8 @@ char scanKeyboard()
     setLow(ROW_5);
     res = readAll();
     res = (~res) & 0x1F;
-    //  if((res) & (1<<COL_1)) return 'alt';
+    if((res) & (1<<COL_1))
+        return (char)MENU_KEY;
     if ((res) & (1 << COL_2))
         return 'X';
     if ((res) & (1 << COL_3))

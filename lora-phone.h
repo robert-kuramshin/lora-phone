@@ -9,6 +9,10 @@
 
 #define USERNAME_LENGTH 8
 
+#define MENU_KEY    27
+
+#define HEADLESS
+
 typedef struct lora_message
 {
     char * user;
@@ -39,12 +43,17 @@ void resetWriteArea();
 
 void screenWriteAt(char * mes,int x,int y);
 
+
+int screenWidth();
+
+int screenHeight();
+
 //------------------------------------------
 
 void loraSetup();
 
 void loraSend(message_t messsage);
 
-message_t loraRead();
+message_t *loraRead();
 
 #endif
