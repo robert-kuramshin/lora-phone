@@ -40,18 +40,24 @@ message_t decode(char* message)
   return res;
 }
 
-message_t loraRead()
+message_t *loraRead()
 {
 int packetSize = LoRa.parsePacket();
 char *message = NULL;
+static message_t *res = NULL;
 int count = 0;
   if (packetSize) {
-    message = (char *)calloc(packetSize,sizeof(char));
+    message = (char *)calloc(packetSize+1,sizeof(char));
     while (LoRa.available()) {
       message[count++] = (char)LoRa.read();
     }
+  message[count] = '\n';
   }
-  message_t res = decode(message);
-  free(message);
+  if(message != NULL)
+  {
+    res = (message_t *)malloc(sizeof(message_t));
+    *res = decode(message);
+    free(message);
+  }
   return res;
 }
